@@ -1,4 +1,4 @@
-import { h, render } from 'preact'
+import { h, render, Component } from 'preact'
 import { createStore, Provider, connect } from 'unistore/full/preact'
 
 /* @jsx h */
@@ -19,18 +19,27 @@ let actions = (store) => ({
   }
 })
 
-const App = connect('count', actions)(
-  ({ count, increment, decrement }) => (
-    <div>
-      <header>App Header</header>
-      <section>
-        <p>Count: {count}</p>
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
-      </section>
-    </div>
-  )
-)
+interface Props {
+  count?: number,
+  increment?: any,
+  decrement?: any
+}
+
+@connect('count', actions)
+class App extends Component<Props, any> {
+  render () {
+    return (
+      <div>
+        <header>App Header</header>
+        <section>
+          <p>Count: {this.props.count}</p>
+          <button onClick={this.props.increment}>Increment</button>
+          <button onClick={this.props.decrement}>Decrement</button>
+        </section>
+      </div>
+    )
+  }
+}
 
 render((
   <Provider store={store}>
