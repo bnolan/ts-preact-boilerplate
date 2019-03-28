@@ -3,14 +3,18 @@ import { createStore, Provider, connect } from 'unistore/full/preact'
 
 /* @jsx h */
 
-let store = createStore({ count: 0 })
+interface State {
+  count: number
+}
+
+let store = createStore<State>({ count: 0 })
 
 let actions = (store) => ({
-  increment (state) {
+  increment (state: State): State {
     return { count: state.count + 1 }
   },
 
-  decrement (state) {
+  decrement (state: State): State {
     return { count: state.count - 1 }
   }
 })
