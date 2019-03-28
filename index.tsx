@@ -1,6 +1,8 @@
 import { h, render, Component } from 'preact'
 import { createStore, Provider, connect } from 'unistore/full/preact'
 
+import './style.less'
+
 /* @jsx h */
 
 interface State {
