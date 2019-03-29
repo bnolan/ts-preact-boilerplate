@@ -1,10 +1,9 @@
 {
-	"compilerOptions": {
-		"jsx": "react",
+  "compilerOptions": {
+    "target": "es6",
+    "jsx": "react",
     "jsxFactory": "h",
     "experimentalDecorators": true
-	}
+  }
 }
-
-
 
