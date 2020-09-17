@@ -10,13 +10,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "budo": "^11.6.1",
-    "tsify": "^4.0.1",
-    "typescript": "^3.3.4000"
+    "budo":  "*",
+    "tsify": "*",
+    "typescript": "*"
   },
   "dependencies": {
     "lessify": "^1.0.2",
-    "preact": "^8.4.2",
-    "unistore": "^3.4.1"
+    "preact": "*",
+    "unistore": "*"
   }
 }
